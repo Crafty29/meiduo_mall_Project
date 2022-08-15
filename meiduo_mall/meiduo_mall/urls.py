@@ -37,12 +37,14 @@ from django.urls import path, include
 from utils.converters import UsernameConverter
 from django.urls import register_converter
 
-register_converter(UsernameConverter,'username')
+register_converter(UsernameConverter, 'username')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include('apps.users.urls')),  # 导入 users子应用的路由
+    path('', include('apps.verifications.urls')),  # 导入 users子应用的路由
+
 ]
 
